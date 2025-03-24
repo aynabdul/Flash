@@ -1,0 +1,120 @@
+.page {
+  background-color: var(--grey);
+  padding: 20px 0;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.heroImage {
+  width: 100%;
+  margin: 60px auto 0 auto;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+.heroImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+.pageTitle {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(40px, 10vw, 150px);
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+  z-index: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cardContainer {
+  position: relative;
+  top: -140px;
+  z-index: 1;
+  background-color: white;
+  padding: 30px 60px;
+  border-radius: 25px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  max-width: 1350px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--navy);
+    text-align: center;
+  }
+
+.galleryGrid {
+  column-count: 3;
+  column-gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.galleryItem {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.galleryItem img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease; 
+}
+
+.galleryItem img:hover {
+  transform: scale(1.05); 
+}
+
+@media (max-width: 1380px) {
+  .galleryGrid {
+    column-count: 3;
+  }
+  .cardContainer {
+    top: -120px;
+    padding: 20px 30px;
+    margin: 50px;
+  }
+  .title{
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: clamp(30px, 8vw, 80px);
+  }
+
+  .cardContainer {
+    top: -100px;
+    padding: 10px 15px;
+    margin: 30px;
+  }
+
+  .galleryGrid {
+    column-count: 2;
+  }
+  .title{
+    font-size: 1.5rem;
+    margin-bottom: 1px;
+  }
+}

@@ -1,0 +1,112 @@
+/* Terms and Conditions Page Styles */
+.tandc-page {
+    background-color: var(--grey);
+    padding: 20px 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.hero-image {
+    width: 100%;
+    margin: 60px auto 0 auto;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    top: -140px;
+    z-index: 1;
+}
+
+@media (max-width: 1280px) {
+    .content {
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        top: -50px;
+    }
+}
+
+.tandc-content {
+    padding: 30px 60px;
+    background-color: white;
+}
+
+.tandc-title {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--navy);
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.tandc-subtitle {
+    margin-bottom: 0; /* Remove margin below subtitle */
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--navy);
+    margin-top: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.tandc-paragraph {
+    margin-bottom: 1px;
+    line-height: 1.6;
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+    padding-left: 40px; /* Add padding to the left of paragraphs */
+}
+
+.tandc-paragraph::first-letter {
+    font-weight: bold;
+}
+
+.tandc-top-paragraph {
+    margin-bottom: 1px;
+    line-height: 1.6;
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.tandc-bot-paragraph {
+    margin-bottom: 1px;
+    line-height: 1.6;
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-top: 50px;
+}
+
+.link-underlined {
+    text-decoration: underline;
+    color: var(--blue);
+    transition: color 0.3s ease;
+}
+
+.link-underlined:hover {
+    color: var(--navy);
+}
+
+/* Lists (if needed) */
+.key-achievements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.key-achievements-list li {
+    margin-bottom: 10px;
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+}

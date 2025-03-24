@@ -1,0 +1,21 @@
+/* DonateButton.css */
+@import './variables.css';
+
+.donate-button {
+    background-color: var(--gold); /* Use yellow from variables */
+    color: white;
+    padding: 10px 20px; /* Match JoinUsButton dimensions */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px; /* Fixed width */
+    text-align: center; /* Center text */
+}
+
+.donate-button:hover {
+    background-color: #FFC107; /* Slightly darker yellow for hover */
+}

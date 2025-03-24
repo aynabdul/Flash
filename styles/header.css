@@ -1,0 +1,294 @@
+@import './variables.css';
+
+/* Header container */
+header {
+    background-color: #F0F2FA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    height: 80px; /* Reduced height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+/* Header inner container */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Ensure all divs inside header are aligned */
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo container */
+header .logo-container {
+    border: 0.5px solid white;
+    padding: 4px; /* Ensure equal padding on all sides */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    bottom: -30px; /* Adjusted to hang slightly below */
+    display: flex;
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+}
+
+header .logo-container img {
+    object-fit: contain;
+    width: 100px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Text next to logo */
+header .logo-text {
+    margin-left: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 500; 
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    color: var(--navy); /* Use navy for text */
+    font-size: 20px;
+}
+
+/* Navigation menu - Desktop */
+header nav {
+    display: flex;
+    gap: 10px;
+    color: var(--navy); /* Use navy for nav buttons */
+}
+
+header nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--gold); /* Use gold for hover */
+}
+
+header nav .divider {
+    color: #ccc;
+}
+
+/* Dropdown menu */
+header .dropdown {
+    position: relative;
+}
+
+header .dropdown-menu {
+    position: absolute;
+    left: 0;
+    margin-top: 8px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 192px;
+    padding: 8px 0;
+    display: none; /* Default to hidden */
+}
+
+header .dropdown.open .dropdown-menu {
+    display: block; /* Show when dropdown is open */
+}
+
+header .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s;
+}
+
+header .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+    margin-left: 8px; /* Space between text and icon */
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.dropdown.open .dropdown-icon {
+    transform: rotate(180deg); /* Rotate icon when dropdown is open */
+}
+
+/* Dropdown button styling */
+.dropdown button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 10px; /* Space below the button */
+}
+
+.dropdown button:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: var(--navy);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 10;
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--grey);
+}
+
+/* Buttons */
+header .button {
+    background-color: #FFD700;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+header .button:hover {
+    background-color: #FFC107;
+}
+
+/* Mobile menu button */
+header .mobile-menu-button {
+    display: none;
+    color: #333;
+}
+
+/* Mobile menu */
+header .mobile-menu {
+    display: none;
+    background-color: #F0F2FA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 80px; /* Adjusted to match header height */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+header .mobile-menu a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+header .mobile-menu a:hover {
+    color: #FFD700;
+}
+
+header .mobile-menu .button {
+    display: block;
+    width: auto; /* Adjust width to match other buttons */
+    padding: 8px 16px; /* Consistent padding */
+    margin: 0; /* Remove auto-centering */
+    text-align: center; /* Center text */
+}
+
+/* Ensure Donate button maintains its width in mobile dropdown */
+header .mobile-menu .button {
+    width: auto; /* Prevent contraction */
+    min-width: 120px; /* Set a minimum width */
+    padding: 8px 16px; /* Consistent padding */
+    text-align: center; /* Center text */
+}
+
+/* Dropdown menu - Mobile (open to the right) */
+header .mobile-menu .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position to the right of the parent */
+    margin-left: 8px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 192px;
+    padding: 8px 0;
+    display: none;
+}
+
+header .mobile-menu .dropdown.open .dropdown-menu {
+    display: block; /* Show when dropdown is open */
+}
+
+/* Hide Donate button in navbar when mobile menu is active */
+header .mobile-menu-active .button {
+    display: none;
+}
+
+/* Ensure Donate button is visible inside the mobile menu */
+header .mobile-menu .button {
+    display: block; /* Ensure the button is displayed */
+    width: 10%; /* Adjust width for mobile menu */
+    margin: 0 auto; /* Center the button */
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+    header nav {
+        gap: 16px; /* Reduce gap between items */
+    }
+
+    header .logo-text {
+        margin-left: 12px; /* Reduce margin between logo and text */
+    }
+}
+
+@media (max-width: 1190px) {
+    header nav {
+        display: none; /* Hide desktop nav */
+    }
+
+    header .mobile-menu-button {
+        display: block; /* Show mobile menu button */
+    }
+
+    header .mobile-menu {
+        display: flex; /* Show mobile menu */
+    }
+
+    header .button {
+        display: none; /* Hide Donate button in navbar */
+    }
+}

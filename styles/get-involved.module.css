@@ -1,0 +1,171 @@
+.page {
+  background-color: var(--grey);
+  padding: 20px 0;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.heroImage {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .heroImage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+    top: -140px;
+  }
+
+.cardContainer {
+  padding: 30px 70px;
+  position: relative;
+  top: -250px;
+  z-index: 1;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--navy);
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: var(--navy);
+}
+
+.subtitle {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--navy);
+  margin-top: 30px;
+}
+
+.list {
+    margin-bottom: 15px;
+    padding-left: 0; /* Remove default padding */
+    list-style: none; /* Remove default bullets */
+  }
+  
+  .list li strong{
+    margin-bottom: 20px;
+    color: var(--navy); /* Space between each way */
+  }
+  
+  .number {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin-right: 10px; /* Space between number and title */
+  }
+  
+  .paragraph {
+    margin-left: 50px; /* Indentation for the paragraph */
+    margin-top: 5px; 
+    margin-bottom: 30px;/* Space between title and paragraph */
+    line-height: 1.6;
+    color: var(--navy);
+  }
+  
+  .bulletPoint {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--navy);
+    
+  }
+
+
+.downloadSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--dark-blue);
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.linkList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pdfIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--blue);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--navy);
+}
+
+@media (max-width: 1280px) {
+    .cardContainer {
+        top: -80px;
+        padding: 40px;
+    }
+    .heroImage img {
+        top: 20px;
+    }
+}
+@media (max-width: 768px) {
+    
+  .cardContainer {
+    top: -50px;
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,145 @@
+.container {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .image {
+    object-fit: cover;
+  }
+  
+  .noImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f0f0;
+    color: #888;
+  }
+  
+  .selectedOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .name,
+  .designation {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .designation {
+    color: #666;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .modal h2 {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formGroup input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }

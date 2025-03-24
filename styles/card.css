@@ -1,0 +1,83 @@
+/* Base card styling */
+.card {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 0 auto 20px; /* Center the card */
+    max-width: 1350px; /* Fixed max width */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative; /* For positioning the expand button */
+  }
+  
+  /* Card content */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Expand/collapse button */
+  .expand-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Light gradient */
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Position at the bottom center */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Full width for the button area */
+    padding: 10px 0; /* Add padding for clickable area */
+    border-bottom-left-radius: 10px; /* Match card border radius */
+    border-bottom-right-radius: 10px;
+    /* Removed box-shadow */
+  }
+  
+  .expand-button img {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .expand-button:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  /* Expanded state */
+  .card.expanded {
+    max-height: none; /* Allow card to expand to fit content */
+  }
+  
+  /* Collapsed state */
+  .card:not(.expanded) {
+    max-height: 1000px; /* Adjust this value as needed */
+    overflow: hidden;
+  }
+
+@media (min-width: 769px) and (max-width: 1368px) {
+    .card {
+        padding: 18px;
+        margin-bottom: 18px;
+        max-width: 95%; /* Adjust for medium screens */
+    }
+
+    .card:not(.expanded) {
+        max-height: 7500px; /* Adjust for medium screens */
+    }
+}
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 15px;
+      margin-bottom: 15px;
+      max-width: 90%; /* Adjust for smaller screens */
+    }
+  
+    .card:not(.expanded) {
+      max-height: 1000px; /* Adjust for smaller screens */
+    }
+  }

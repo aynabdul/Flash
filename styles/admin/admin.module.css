@@ -1,0 +1,18 @@
+.adminContainer {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.adminHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.adminCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+} 

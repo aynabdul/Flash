@@ -1,0 +1,126 @@
+/* Container for the entire gallery admin page */
+.container {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: var(--navy);
+  }
+  
+  /* Header section styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Upload section styles */
+  .uploadSection {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .uploadLabel {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .uploadInput {
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--navy);
+  }
+  
+  /* Grid layout for Instagram-style gallery */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  /* Card styles for each gallery image */
+  .card {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Image wrapper for a square aspect ratio */
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio */
+    background-color: #f0f0f0;
+  }
+  
+  /* Selected overlay */
+  .selectedOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 162, 232, 0.5);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  
+  /* Image styling */
+  .image {
+    object-fit: cover;
+  }
+  
+  /* No image placeholder */
+  .noImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Caption styling */
+  .caption {
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  

@@ -1,0 +1,137 @@
+.history-page {
+    background-color: var(--grey);
+    padding: 20px 0;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  .hero-image {
+    width: 100%;
+    margin: 60px auto 0 auto;
+    display: block;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+  }
+  
+  .page-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(40px, 10vw, 150px);
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: Arial, sans-serif;
+    z-index: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .content {
+    position: relative;
+    top: -140px;
+    z-index: 1;
+    margin: 0 auto;
+  }
+  
+  .history-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 60px;
+  }
+  
+  .history-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .history-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .history-text {
+    flex: 1;
+  }
+  
+  .history-paragraph {
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .history-image {
+    flex-shrink: 0;
+  }
+  
+  .round-image {
+    border-radius: 10px;
+    border: 5px solid var(--navy);
+  }
+  
+  .certificates-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .certificate {
+    text-align: center;
+  }
+  
+  .certificate-image {
+    border-radius: 10px;
+    border: 2px solid var(--navy);
+  }
+  
+  .certificate-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin-top: 10px;
+  }
+
+  @media (max-width: 1280px) {
+    .page-title {
+      font-size: clamp(35px, 9vw, 100px);
+    }
+    .content {
+      top: -80px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .history-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page-title {
+      font-size: clamp(30px, 8vw, 80px);
+    }
+  
+    .content {
+      top: -50px;
+      padding: 20px;
+    }
+  
+    .certificates-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

@@ -1,0 +1,309 @@
+/* src/styles/Footer.css */
+@import './variables.css';
+
+.footer {
+    color: var(--navy);
+    padding: 40px 20px; /* Increase padding for equal spacing */
+    text-align: left; /* Align text to the left */
+    border-top: 1px solid var(--grey); /* Horizontal line underneath */
+    font-family: Arial, sans-serif; /* Use Arial font for footer */
+    padding-bottom: 20px; /* Reduce padding to minimize space below the footer */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add shadow at the top of the footer */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: none; /* Remove the existing horizontal line */
+    padding-bottom: 40px; /* Add more padding to move the line lower */
+    }
+
+.footer::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--grey); /* Horizontal line at the bottom */
+    margin-top: 10px; /* Reduce space between content and horizontal line */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 20px; /* Add padding between sections */
+    position: relative;
+    line-height: 1.8; /* Add line spacing between elements */
+    }
+
+.footer-section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--grey); /* Vertical line between sections */
+}
+
+.footer-section h3 {
+    color: var(--blue);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    /*border-bottom: 2px solid var(--grey);*/
+    padding-bottom: 5px;
+    font-weight: bold; /* Make section names bolder */
+    margin-top: 0; /* Ensure no extra space above section names */
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+/* Add gap between <p> elements in footer sections */
+.footer-section p {
+    margin-bottom: 10px; /* Adjust the gap size as needed */
+}
+
+/* Add gap between footer navigation links */
+.footer-section ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.footer-section a {
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    font-family: 'Trebuchet MS', sans-serif; 
+    /* Ensure Arial font for text, links, and navigation */
+}
+
+/* Sitemap dropdown */
+.footer-section .dropdown {
+    position: relative;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+    margin-left: 8px; /* Space between text and icon */
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.dropdown.open .dropdown-icon {
+    transform: rotate(180deg); /* Rotate icon when dropdown is open */
+}
+
+/* Dropdown button styling */
+.dropdown button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 10px; /* Space below the button */
+}
+
+.dropdown button:hover {
+    text-decoration: underline;
+}
+
+.footer-section .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: var(--navy);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 10;
+}
+
+.footer-section .dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.footer-section .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: background-color 0.3s;
+}
+
+.footer-section .dropdown-menu a:hover {
+    background-color: var(--grey);
+}
+
+/* Dropdown icon styling */
+.header .dropdown-icon {
+    margin-left: 8px; /* Space between text and icon */
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.header .dropdown.open .dropdown-icon {
+    transform: rotate(180deg); /* Rotate icon when dropdown is open */
+}
+
+/* Dropdown button styling */
+.header .dropdown button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 10px; /* Space below the button */
+}
+
+.header .dropdown button:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown menu styling */
+.header .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: var(--navy);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 10;
+}
+
+.header .dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.header .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: background-color 0.3s;
+}
+
+.header .dropdown-menu a:hover {
+    background-color: var(--grey);
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Align icons horizontally */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Footer buttons */
+.footer-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+    gap: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer-section:not(:last-child)::after {
+        display: none; /* Remove vertical lines on small screens */
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .footer-buttons {
+        align-items: center; /* Center buttons on small screens */
+        color: inherit; /* Ensure buttons inherit their color */
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--grey); /* Horizontal line above copyright section */
+    font-size: 0.8rem;
+    color: var(--navy);
+    display: flex;
+    justify-content: space-between; /* Align content in a single line */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 10px;
+    padding: 0 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row; /* Default to row layout */
+    gap: 10px;
+}
+
+.footer-link-button {
+    background-color: transparent; /* Remove background color */
+    color: var(--navy); /* Use --navy for text color */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-link-button:hover {
+    color: var(--dark-blue); /* Change text color on hover */
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column; /* Stack content vertically on small screens */
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-direction: column; /* Switch to column layout on small screens */
+        align-items: center;
+        gap: 5px;
+    }
+}

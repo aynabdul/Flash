@@ -1,0 +1,119 @@
+.container {
+  padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .selectedRow {
+    background-color: #e0f7fa;
+  }
+  
+  .noData {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .modal h2 {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }

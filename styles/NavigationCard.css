@@ -1,0 +1,117 @@
+.navigation-card {
+    width: 275px;
+    padding: 5px;
+    min-height: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navigation-card:hover {
+    transform: translateY(-5px);
+}
+
+.navigation-card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* Ensures the image maintains its fixed size */
+}
+
+.navigation-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--blue); /* Replace with your blue color variable */
+    margin: 8px 0;
+}
+
+.navigation-card-description {
+    font-size: 0.9rem;
+    color: var(--navy); /* Replace with your navy color variable */
+    line-height: 1.4;
+    margin: 8px 0;
+}
+
+.navigation-card-button {
+    background-color: var(--gold); /* Replace with your gold color variable */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.navigation-card-button:hover {
+    background-color: darkgoldenrod; /* Slightly darker shade of gold */
+}
+
+@media (max-width: 1280px) {
+    .navigation-card {
+        width: 250px; /* Slightly smaller width */
+        min-height: 320px; /* Adjust height */
+    }
+
+    .navigation-card-title {
+        font-size: 1.1rem; /* Slightly smaller title font */
+    }
+
+    .navigation-card-description {
+        font-size: 0.85rem; /* Slightly smaller description font */
+    }
+
+    .navigation-card-button {
+        font-size: 0.95rem; /* Slightly smaller button font */
+        padding: 6px 14px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-card {
+        width: 200px; /* Smaller width */
+        min-height: 280px; /* Adjust height */
+    }
+
+    .navigation-card-title {
+        font-size: 1rem; /* Smaller title font */
+    }
+
+    .navigation-card-description {
+        font-size: 0.8rem; /* Smaller description font */
+    }
+
+    .navigation-card-button {
+        font-size: 0.9rem; /* Smaller button font */
+        padding: 5px 12px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 460px) {
+    .navigation-card {
+        width: 150px; /* Smallest width */
+        min-height: 240px; /* Adjust height */
+    }
+
+    .navigation-card-title {
+        font-size: 0.9rem; /* Smallest title font */
+    }
+
+    .navigation-card-description {
+        font-size: 0.75rem; /* Smallest description font */
+    }
+
+    .navigation-card-button {
+        font-size: 0.85rem; /* Smallest button font */
+        padding: 4px 10px; /* Adjust padding */
+    }
+}

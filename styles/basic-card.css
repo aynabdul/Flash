@@ -1,0 +1,36 @@
+/* Base card styling */
+.basic-card {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 0 auto 20px; /* Center the card */
+    max-width: 1350px; /* Fixed max width */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative; /* For positioning */
+  }
+  
+  /* Card content */
+  .basic-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 769px) and (max-width: 1368px) {
+    .basic-card {
+      padding: 18px;
+      margin-bottom: 18px;
+      max-width: 95%; /* Adjust for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .basic-card {
+      padding: 15px;
+      margin-bottom: 15px;
+      max-width: 90%; /* Adjust for smaller screens */
+    }
+  }

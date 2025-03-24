@@ -1,0 +1,92 @@
+/* Privacy Policy Page Specific Styles */
+.privacy-page {
+    background-color: var(--grey);
+    padding: 20px 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.hero-image {
+    width: 100%;
+    margin: 60px auto 0 auto;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    top: -140px;
+    z-index: 1;
+}
+
+@media (max-width: 1280px) {
+    .content {
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        top: -50px;
+    }
+}
+
+.privacy-content {
+    padding: 30px 60px;
+    background-color: white;
+}
+
+.privacy-title {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--navy);
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.privacy-subtitle {
+    margin-bottom: 0; /* Remove margin below subtitle */
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--navy);
+    margin-top: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.privacy-paragraph {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.link-underlined {
+    text-decoration: underline;
+    color: var(--blue);
+    transition: color 0.3s ease;
+}
+
+.link-underlined:hover {
+    color: var(--navy);
+}
+
+/* Lists (if needed) */
+.key-achievements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.key-achievements-list li {
+    color: var(--navy);
+    font-family: 'Trebuchet MS', sans-serif;
+}

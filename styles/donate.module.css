@@ -1,0 +1,87 @@
+.donate-page {
+    background-color: var(--grey);
+    padding: 20px 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.hero-image {
+    width: 100%;
+    margin: 0 auto; /* Removed margin-top */
+    display: block;
+    position: relative;
+    top: -210px; /* Added top property */
+    z-index: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+}
+
+
+.content {
+    position: relative;
+    top: -300px;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .content {
+        top: -80px; 
+    }
+    .hero-image {
+        margin: 0 auto;
+        top: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        top: -50px; 
+    }
+    .hero-image {
+        margin: 0 auto; 
+        top: -20px; 
+    }
+}
+
+.donate-content {
+    padding: 30px 60px; /* Consistent padding */
+    background-color: white; /* Match the card background */
+}
+
+.donate-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--navy); /* Use navy color */
+    text-align: center; /* Center the title */
+    font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.donate-subtitle {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600; /* Semi-bold */
+    color: var(--navy); /* Use navy color */
+    text-align: left; /* Left-align the subtitle */
+    font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.donate-paragraph {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--navy); /* Use navy color */
+    font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--navy); /* Use navy color */
+    font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+

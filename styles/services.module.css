@@ -1,0 +1,83 @@
+.our-services-page {
+  background-color: var(--grey);
+  padding: 20px 0px;
+}
+
+.hero-image {
+  width: 100%;
+  margin: 60px auto 0 auto; 
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  top: -175px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .content {
+    top: -80px; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    top: -50px; /* Further adjustment for very small screens */
+  }
+}
+
+.content-container {
+  padding: 30px 60px; /* Increased padding on left and right */
+  background-color: white; /* Match the card background */
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--navy); /* Use navy color */
+  text-align: center; /* Center the title */
+  font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.card-subtitle {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600; /* Semi-bold */
+  color: var(--navy); /* Use navy color */
+  text-align: left; /* Left-align the subtitle */
+  font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.card-paragraph {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: var(--navy); /* Use navy color */
+  font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+.card-list {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  list-style-type: disc; /* Use disc for unordered lists */
+}
+
+.card-list ol {
+  list-style-type: decimal; /* Use decimal for ordered lists */
+}
+
+.card-list li {
+  margin-bottom: 5px;
+  color: var(--navy); /* Use navy color */
+  font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
