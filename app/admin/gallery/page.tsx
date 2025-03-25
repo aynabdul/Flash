@@ -52,9 +52,9 @@ export default function GalleryAdminPage() {
       // Refresh the gallery data
       await fetchData();
       setUploadFiles([]);
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error uploading images:', err);
-      setUploadError(err.message || 'Failed to upload images.');
+      setUploadError(err instanceof Error ? err.message : 'Failed to upload images.');
     } finally {
       setUploading(false);
     }
@@ -87,8 +87,12 @@ export default function GalleryAdminPage() {
       }
       await fetchData();
       setSelectedForDelete(new Set());
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error deleting selected images:', err);
+      // You might want to show this error to the user in the UI
+      if (err instanceof Error) {
+        console.error(err.message);
+      }
     }
   };
 

@@ -14,6 +14,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <AdminHeader />
       <div className="flex-1 bg-gray-50" style={{ paddingTop: '50px' }}>
         {children}
       </div>

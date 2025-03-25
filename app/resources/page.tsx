@@ -17,10 +17,6 @@ interface Resource {
 const ResourcesPage = () => {
   const { data: resources, loading, error } = useSupabase<Resource>(TABLES.RESOURCES);
 
-  const handleDownload = (url: string) => {
-    window.open(url, '_blank');
-  };
-
   const resourceList = (
     <div className={styles.resourceList}>
       {loading ? (

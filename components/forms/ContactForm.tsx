@@ -18,18 +18,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ paragraph }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name || !phone) {
-      setSubmitMessage("Name and phone are required.");
+    if (!name || !phone || !email || !message) {
+      setSubmitMessage("All fields are mandatory.");
       return;
     }
 
-    if (!email.includes("@gmail.com")) {
-      setSubmitMessage("Please enter a valid Gmail address.");
-      return;
-    }
-
-    if (!message) {
-      setSubmitMessage("Message cannot be empty.");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubmitMessage("Please enter a valid email address.");
       return;
     }
 
@@ -42,8 +38,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ paragraph }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, phone, email, message }),
+        body: JSON.stringify({ 
+          name, 
+          phone, 
+          email, 
+          message,
+          recipient: "flashpakistan@gmail.com" 
+        }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitMessage("Message sent successfully!");
@@ -52,11 +56,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ paragraph }) => {
         setEmail("");
         setMessage("");
       } else {
-        setSubmitMessage("Failed to send message. Please try again.");
+        setSubmitMessage(`Failed to send message: ${data.error || 'Unknown error'}`);
+        if (data.details) {
+          console.error('Server error details:', data.details);
+        }
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setSubmitMessage("An error occurred. Please try again.");
+      setSubmitMessage("An error occurred while sending the message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

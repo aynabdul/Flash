@@ -97,9 +97,9 @@ export default function LeadershipAdminPage() {
       // Refresh the leadership data
       await fetchData();
       closeModal();
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error saving leader:', err);
-      setUploadError(err.message || 'Failed to save leader.');
+      setUploadError(err instanceof Error ? err.message : 'Failed to save leader.');
     } finally {
       setUploading(false);
     }
@@ -133,8 +133,11 @@ export default function LeadershipAdminPage() {
       }
       await fetchData();
       setSelectedForDelete(new Set());
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error deleting selected leaders:', err);
+      if (err instanceof Error) {
+        console.error(err.message);
+      }
     }
   };
 

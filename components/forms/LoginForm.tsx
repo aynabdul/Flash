@@ -104,7 +104,7 @@ const LoginForm: React.FC = () => {
         
         <Button
           type="submit"
-          variant="primary"
+          variant="outline"
           disabled={isSubmitting}
           className="w-full"
         >

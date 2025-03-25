@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import '../../styles/header.css';
-import DonateButton from "../common/DonateButton"; // Import the reusable DonateButton component
+import DonateButton from "./DonateButton"; // Import the reusable DonateButton component
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

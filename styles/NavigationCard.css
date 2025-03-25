@@ -17,12 +17,17 @@
     transform: translateY(-5px);
 }
 
-.navigation-card-image {
+.navigation-card-image-container {
+    position: relative;
     width: 100%;
     height: 150px;
-    object-fit: cover;
     border-radius: 8px;
-    flex-shrink: 0; /* Ensures the image maintains its fixed size */
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.navigation-card-image {
+    object-fit: cover;
 }
 
 .navigation-card-title {

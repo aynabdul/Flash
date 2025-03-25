@@ -87,8 +87,11 @@ export default function SuccessStoriesAdminPage() {
       // Refresh the stories data
       await fetchData();
       closeModal();
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error saving story:', err);
+      if (err instanceof Error) {
+        console.error(err.message);
+      }
     }
   };
 
@@ -111,8 +114,11 @@ export default function SuccessStoriesAdminPage() {
       }
       await fetchData();
       setSelectedForDelete(new Set());
-    } catch (err: any) {
+    } catch (err: Error | unknown) {
       console.error('Error deleting selected stories:', err);
+      if (err instanceof Error) {
+        console.error(err.message);
+      }
     }
   };
 
