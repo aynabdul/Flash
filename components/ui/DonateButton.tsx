@@ -3,11 +3,7 @@
 import React from 'react';
 import '../../styles/DonateButton.css';
 
-interface DonateButtonProps {
-  className?: string;
-}
-
-const DonateButton: React.FC<DonateButtonProps> = ({ className }) => {
+const DonateButton: React.FC = () => {
   return (
     <button className="donate-button">
       Donate

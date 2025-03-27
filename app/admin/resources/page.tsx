@@ -8,15 +8,6 @@ import { uploadPDF, deleteFile } from '@/lib/supabase-storage';
 import Button from '@/components/ui/Button';
 import styles from '../../../styles/admin/success-stories.module.css';
 
-const displayOrder = [
-  "FLASH's Latest Annual Report & Audit Report",
-  "FLASH's Latest Renewal of Registration",
-  "Application Forms for Criminal Cases",
-  "Application Forms for Civil Cases",
-  "Membership Form for New Members",
-  "Friends of FLASH Form for New Friends"
-];
-
 interface LocalResource {
   id: string;
   name: string;
@@ -78,7 +69,7 @@ export default function ResourcesAdmin() {
         });
       } else if (isEditModalOpen && currentResource) {
         // For editing, only upload new PDF if file is selected
-        let updatedFields: Partial<Resource> = {
+        const updatedFields: Partial<Resource> = {
           name: formState.name,
           description: formState.description,
         };

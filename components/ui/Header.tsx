@@ -76,8 +76,8 @@ const Header = () => {
 
         {/* Buttons */}
         <div className="navbar-button">
-          <Link href="/donate">
-            <DonateButton className="button" />
+          <Link className="button" href="/donate">
+            <DonateButton/>
           </Link>
         </div>
 

@@ -15,15 +15,6 @@ interface Resource {
   created_at: string;  // Add this field
 }
 
-const displayOrder = [
-  "FLASH's Latest Annual Report & Audit Report",
-  "FLASH's Latest Renewal of Registration",
-  "Application Forms for Criminal Cases",
-  "Application Forms for Civil Cases",
-  "Membership Form for New Members",
-  "Friends of FLASH Form for New Friends"
-];
-
 const ResourcesPage = () => {
   const { data: resources, loading, error } = useSupabase<Resource>(TABLES.RESOURCES);
 
