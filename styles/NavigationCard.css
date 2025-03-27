@@ -33,19 +33,19 @@
 .navigation-card-title {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--blue); /* Replace with your blue color variable */
+    color: var(--blue);
     margin: 8px 0;
 }
 
 .navigation-card-description {
     font-size: 0.9rem;
-    color: var(--navy); /* Replace with your navy color variable */
+    color: var(--navy);
     line-height: 1.4;
     margin: 8px 0;
 }
 
 .navigation-card-button {
-    background-color: var(--gold); /* Replace with your gold color variable */
+    background-color: var(--gold);
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -58,65 +58,87 @@
 }
 
 .navigation-card-button:hover {
-    background-color: darkgoldenrod; /* Slightly darker shade of gold */
+    background-color: darkgoldenrod;
 }
 
-@media (max-width: 1280px) {
-    .navigation-card {
-        width: 250px; /* Slightly smaller width */
-        min-height: 320px; /* Adjust height */
-    }
-
-    .navigation-card-title {
-        font-size: 1.1rem; /* Slightly smaller title font */
-    }
-
-    .navigation-card-description {
-        font-size: 0.85rem; /* Slightly smaller description font */
-    }
-
-    .navigation-card-button {
-        font-size: 0.95rem; /* Slightly smaller button font */
-        padding: 6px 14px; /* Adjust padding */
-    }
+.navigation-card-mobile-link {
+    display: none;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
 }
 
+.navigation-card-button-wrapper {
+    display: block;
+}
+
+/* Mobile Horizontal Layout */
 @media (max-width: 768px) {
     .navigation-card {
-        width: 200px; /* Smaller width */
-        min-height: 280px; /* Adjust height */
+        width: 90%;
+        min-height: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .navigation-card-image-container {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+    }
+
+    .navigation-card-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+        height: 100%;
     }
 
     .navigation-card-title {
-        font-size: 1rem; /* Smaller title font */
+        margin-top: 0;
+        text-align: left;
     }
 
     .navigation-card-description {
-        font-size: 0.8rem; /* Smaller description font */
+        text-align: left;
+        margin: 8px 0 12px;
     }
 
     .navigation-card-button {
-        font-size: 0.9rem; /* Smaller button font */
-        padding: 5px 12px; /* Adjust padding */
+        align-self: flex-end;
+        margin: 0;
+    }
+
+    .navigation-card-mobile-link {
+        display: inline;
+    }
+
+    .navigation-card-button-wrapper {
+        display: none;
     }
 }
 
 @media (max-width: 460px) {
-    .navigation-card {
-        width: 150px; /* Smallest width */
-        min-height: 240px; /* Adjust height */
+    .navigation-card-image-container {
+        width: 100px;
+        height: 100px;
     }
 
     .navigation-card-title {
-        font-size: 0.9rem; /* Smallest title font */
+        font-size: 1rem;
     }
 
     .navigation-card-description {
-        font-size: 0.75rem; /* Smallest description font */
+        font-size: 0.85rem;
     }
 
     .navigation-card-button {
-        font-size: 0.85rem; /* Smallest button font */
-        padding: 4px 10px; /* Adjust padding */
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 }

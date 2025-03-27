@@ -75,9 +75,9 @@ const Header = () => {
         </nav>
 
         {/* Buttons */}
-        <div>
+        <div className="navbar-button">
           <Link href="/donate">
-            <DonateButton /> {/* Use the reusable DonateButton component */}
+            <DonateButton className="button" />
           </Link>
         </div>
 

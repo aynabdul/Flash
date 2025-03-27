@@ -17,8 +17,8 @@ interface Resource {
 const GetInvolvedPage = () => {
   const { data: resources, loading, error } = useSupabase<Resource>(TABLES.RESOURCES);
 
-  const membershipForm = resources.find((resource) => resource.name === 'Membership form');
-  const friendsForm = resources.find((resource) => resource.name === 'Friends of FLASH Form');
+  const membershipForm = resources.find((resource) => resource.name === 'Membership Form for New Members');
+  const friendsForm = resources.find((resource) => resource.name === 'Friends of FLASH Form for New Friends');
 
   return (
     <main className={styles.page}>

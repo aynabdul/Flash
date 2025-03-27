@@ -95,14 +95,14 @@ export default function HomePage() {
             title="THE ISSUE"
             description="The justice system in Pakistan often denies the poor and marginalized fair trials due to lack of legal access and representation."
             buttonText="LEARN MORE"
-            route="/issue"
+            route="/mission"
           />
           <NavigationCard
             imageSrc="/images/LHC.jpg"
             title="OUR WORK"
             description="We provide free legal aid and representation to the helpless, ensuring their right to justice and fair trials is upheld."
             buttonText="HERE'S HOW"
-            route="/work"
+            route="/services"
           />
           <NavigationCard
             imageSrc="/images/free from prison.webp"

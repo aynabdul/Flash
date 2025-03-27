@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import { useState } from 'react';
 import { useSupabase } from '@/hooks/useSupabase';
 import { Resource } from '@/lib/supabase-schema';
@@ -8,13 +8,30 @@ import { uploadPDF, deleteFile } from '@/lib/supabase-storage';
 import Button from '@/components/ui/Button';
 import styles from '../../../styles/admin/success-stories.module.css';
 
+const displayOrder = [
+  "FLASH's Latest Annual Report & Audit Report",
+  "FLASH's Latest Renewal of Registration",
+  "Application Forms for Criminal Cases",
+  "Application Forms for Civil Cases",
+  "Membership Form for New Members",
+  "Friends of FLASH Form for New Friends"
+];
+
+interface LocalResource {
+  id: string;
+  name: string;
+  pdf_url: string;
+  description?: string;
+  created_at: string;
+}
+
 export default function ResourcesAdmin() {
-  const { data: resources, loading, error, fetchData, addRecord, updateRecord, deleteRecord } = useSupabase<Resource>(TABLES.RESOURCES);
+  const { data: resources, loading, error, fetchData, addRecord, updateRecord, deleteRecord } = useSupabase<LocalResource>(TABLES.RESOURCES);
 
   const [selectedForDelete, setSelectedForDelete] = useState<Set<string>>(new Set());
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [currentResource, setCurrentResource] = useState<Resource | null>(null);
+  const [currentResource, setCurrentResource] = useState<LocalResource | null>(null);
   const [formState, setFormState] = useState({ name: '', description: '', file: null as File | null });
 
   const openAddModal = () => {
@@ -22,7 +39,7 @@ export default function ResourcesAdmin() {
     setFormState({ name: '', description: '', file: null });
   };
 
-  const openEditModal = (resource: Resource) => {
+  const openEditModal = (resource: LocalResource) => {
     setIsEditModalOpen(true);
     setCurrentResource(resource);
     setFormState({ name: resource.name, description: resource.description || '', file: null });
@@ -48,25 +65,46 @@ export default function ResourcesAdmin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      let pdfUrl = '';
-      if (formState.file) {
-        pdfUrl = await uploadPDF(formState.file);
-      }
-
       if (isAddModalOpen) {
-        await addRecord({ name: formState.name, description: formState.description, pdf_url: pdfUrl });
-      } else if (isEditModalOpen && currentResource) {
-        await updateRecord(currentResource.id, {
+        // For new resource, PDF is required
+        if (!formState.file) {
+          throw new Error('Please select a PDF file');
+        }
+        const pdfUrl = await uploadPDF(formState.file);
+        await addRecord({
           name: formState.name,
           description: formState.description,
-          pdf_url: pdfUrl || currentResource.pdf_url,
+          pdf_url: pdfUrl,
         });
+      } else if (isEditModalOpen && currentResource) {
+        // For editing, only upload new PDF if file is selected
+        let updatedFields: Partial<Resource> = {
+          name: formState.name,
+          description: formState.description,
+        };
+
+        if (formState.file) {
+          // If there's an existing PDF, delete it first
+          if (currentResource.pdf_url) {
+            try {
+              await deleteFile(currentResource.pdf_url);
+            } catch (err) {
+              console.error('Error deleting old PDF:', err);
+            }
+          }
+          // Upload new PDF
+          const pdfUrl = await uploadPDF(formState.file);
+          updatedFields.pdf_url = pdfUrl;
+        }
+
+        await updateRecord(currentResource.id, updatedFields);
       }
 
       await fetchData();
       closeModal();
     } catch (err) {
       console.error('Error saving resource:', err);
+      alert(err instanceof Error ? err.message : 'Error saving resource');
     }
   };
 
@@ -95,6 +133,12 @@ export default function ResourcesAdmin() {
       console.error('Error deleting selected resources:', err);
     }
   };
+
+  const sortedResources = React.useMemo(() => {
+    return [...(resources || [])].sort((a, b) => {
+      return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+    });
+  }, [resources]);
 
   return (
     <div className={styles.container}>
@@ -129,7 +173,7 @@ export default function ResourcesAdmin() {
                 <td colSpan={5} className={styles.noData}>No resources found. Add your first resource.</td>
               </tr>
             ) : (
-              resources.map((resource) => (
+              sortedResources.map((resource) => (
                 <tr key={resource.id} className={selectedForDelete.has(resource.id) ? styles.selectedRow : ''}>
                   <td>
                     <input

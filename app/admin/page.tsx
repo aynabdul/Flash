@@ -28,18 +28,18 @@ export default function AdminPage() {
 
   const cards = [
     {
-      title: 'Leadership',
-      description: 'Manage Team',
-      route: '/admin/leadership',
-      imageSrc: '/images/user.png',
-      buttonText: 'View Team',
-    },
-    {
       title: 'Gallery',
       description: 'Manage Images',
       route: '/admin/gallery',
       imageSrc: '/images/camera.png',
       buttonText: 'View Gallery',
+    },
+    {
+      title: 'Leadership',
+      description: 'Manage Team',
+      route: '/admin/leadership',
+      imageSrc: '/images/user.png',
+      buttonText: 'View Team',
     },
     {
       title: 'Resources',

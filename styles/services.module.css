@@ -24,18 +24,6 @@
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .content {
-    top: -80px; /* Adjusted for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    top: -50px; /* Further adjustment for very small screens */
-  }
-}
-
 .content-container {
   padding: 30px 60px; /* Increased padding on left and right */
   background-color: white; /* Match the card background */
@@ -80,4 +68,22 @@
   margin-bottom: 5px;
   color: var(--navy); /* Use navy color */
   font-family: 'Trebuchet MS', sans-serif; /* Set font */
+}
+
+@media (max-width: 768px) {
+  .content {
+    top: -80px; /* Adjusted for smaller screens */
+  }
+  .content-container{
+    padding: 20px 40px; /* Reduced padding on left and right */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    top: -50px; /* Further adjustment for very small screens */
+  }
+  .content-container{
+    padding: 10px 20px; /* Reduced padding on left and right */
+  }
 }

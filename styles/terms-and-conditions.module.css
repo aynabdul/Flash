@@ -26,17 +26,7 @@
     z-index: 1;
 }
 
-@media (max-width: 1280px) {
-    .content {
-        top: -80px;
-    }
-}
 
-@media (max-width: 768px) {
-    .content {
-        top: -50px;
-    }
-}
 
 .tandc-content {
     padding: 30px 60px;
@@ -109,4 +99,24 @@
     margin-bottom: 10px;
     color: var(--navy);
     font-family: 'Trebuchet MS', sans-serif;
+}
+@media (max-width: 1280px) {
+    .content {
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        top: -50px;
+    }
+    .tandc-content{
+        padding: 20px 40px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .tandc-content{
+        padding: 10px 20px;
+    }
+    
 }

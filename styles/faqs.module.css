@@ -25,17 +25,7 @@
     z-index: 1;
 }
 
-@media (max-width: 1280px) {
-    .content {
-        top: -80px;
-    }
-}
 
-@media (max-width: 768px) {
-    .content {
-        top: -50px;
-    }
-}
 
 .faqs-content {
     padding: 30px 60px;
@@ -88,4 +78,24 @@
 
 .link-underlined:hover {
     color: var(--navy);
+}
+@media (max-width: 1280px) {
+    .content {
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        top: -50px;
+    }
+    .faqs-content{
+        padding: 20px 40px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .faqs-content{
+        padding: 10px 20px;
+    }
+    
 }

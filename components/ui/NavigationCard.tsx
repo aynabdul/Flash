@@ -11,7 +11,13 @@ interface NavigationCardProps {
   route: string;
 }
 
-const NavigationCard: React.FC<NavigationCardProps> = ({ imageSrc, title, description, buttonText, route }) => {
+const NavigationCard: React.FC<NavigationCardProps> = ({ 
+  imageSrc, 
+  title, 
+  description, 
+  buttonText, 
+  route 
+}) => {
   return (
     <div className="navigation-card">
       <div className="navigation-card-image-container">
@@ -23,11 +29,19 @@ const NavigationCard: React.FC<NavigationCardProps> = ({ imageSrc, title, descri
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
-      <h3 className="navigation-card-title">{title}</h3>
-      <p className="navigation-card-description">{description}</p>
-      <Link href={route}>
-        <button className="navigation-card-button">{buttonText}</button>
-      </Link>
+      
+      <div className="navigation-card-content">
+        <h3 className="navigation-card-title">{title}</h3>
+        <p className="navigation-card-description">
+          {description}
+          <Link href={route} className="navigation-card-mobile-link">
+            {buttonText} 
+          </Link>
+        </p>
+        <Link href={route} className="navigation-card-button-wrapper">
+          <button className="navigation-card-button">{buttonText}</button>
+        </Link>
+      </div>
     </div>
   );
 };

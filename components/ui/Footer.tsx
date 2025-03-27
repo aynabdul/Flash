@@ -45,6 +45,9 @@ const Footer = () => {
         {/* Column 2: Sitemap */}
         <div className="footer-section">
           <h3>Sitemap</h3>
+          <ul>
+            <li><Link href="/">Home</Link></li>
+          </ul>
           <div className={`dropdown ${sitemapDropdown ? 'open' : ''}`} ref={dropdownRef}>
             <button onClick={toggleSitemapDropdown}>
               About Us <ChevronDown size={16} className="dropdown-icon" />
@@ -57,7 +60,6 @@ const Footer = () => {
             </div>
           </div>
           <ul>
-            <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/impact">Our Impact</Link></li>
             <li><Link href="/get-involved">Get Involved</Link></li>

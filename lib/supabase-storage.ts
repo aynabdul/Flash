@@ -71,7 +71,37 @@ export async function uploadImage(file: File, collection: string = 'gallery'): P
  * @returns The public URL of the uploaded PDF
  */
 export async function uploadPDF(file: File): Promise<string> {
-  return uploadFile('pdfs/resources', file);
+  const sanitizedFileName = file.name.replace(/\s+/g, '_');
+  const path = `resources/${sanitizedFileName}`; // This will create resources folder inside pdfs bucket
+  const bucket = 'pdfs'; // Use pdfs bucket instead of images
+
+  try {
+    console.log(`Uploading PDF ${file.name} to bucket: ${bucket}, path: ${path}`);
+
+    const { data, error } = await supabase.storage
+      .from(bucket)
+      .upload(path, file, {
+        cacheControl: '3600',
+        upsert: true,
+        contentType: 'application/pdf',
+      });
+
+    if (error) {
+      console.error('Supabase Upload Error:', error);
+      throw error;
+    }
+
+    if (!data) {
+      throw new Error('Upload succeeded but no data was returned');
+    }
+
+    const { data: publicUrlData } = supabase.storage.from(bucket).getPublicUrl(data.path);
+    return publicUrlData.publicUrl;
+  } catch (error: unknown) {
+    const err = error as DetailedError;
+    console.error('PDF Upload Failed:', err);
+    throw new Error(`PDF upload failed: ${err.message}`);
+  }
 }
 
 /**
@@ -171,4 +201,4 @@ export async function deleteFile(url: string): Promise<void> {
     
     throw new Error(`Failed to delete file: ${errorMessage}${errorDetails ? ` (${errorDetails})` : ''}${errorHint ? ` Hint: ${errorHint}` : ''}${errorCode ? ` Code: ${errorCode}` : ''}`);
   }
-} 
+}

@@ -172,7 +172,6 @@ header .dropdown-menu a:hover {
     background-color: var(--grey);
 }
 
-/* Buttons */
 header .button {
     background-color: #FFD700;
     color: white;
@@ -252,16 +251,10 @@ header .mobile-menu .dropdown.open .dropdown-menu {
     display: block; /* Show when dropdown is open */
 }
 
-/* Hide Donate button in navbar when mobile menu is active */
-header .mobile-menu-active .button {
-    display: none;
-}
-
-/* Ensure Donate button is visible inside the mobile menu */
-header .mobile-menu .button {
-    display: block; /* Ensure the button is displayed */
-    width: 10%; /* Adjust width for mobile menu */
-    margin: 0 auto; /* Center the button */
+/* Navbar button container */
+header .navbar-button {
+    display: flex;
+    align-items: center;
 }
 
 /* Responsive styles */
@@ -291,4 +284,49 @@ header .mobile-menu .button {
     header .button {
         display: none; /* Hide Donate button in navbar */
     }
+
+    header .navbar-button {
+        display: none; /* Hide navbar donate button */
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        padding: 0 12px; /* Reduced padding */
+    }
+
+    header .logo-container {
+        bottom: -20px; /* Adjusted for smaller header */
+    }
+
+    header .logo-container img {
+        width: 80px; /* Smaller logo */
+    }
+
+    header .logo-text {
+        font-size: 14px; /* Smaller text */
+        margin-left: 8px;
+    }
+
+    header .mobile-menu {
+        top: 60px; /* Match new header height */
+        padding: 12px 0;
+    }
+
+    header .mobile-menu .button {
+        display: block; /* Ensure button visible in mobile menu */
+        width: 90%; 
+        max-width: 200px;
+        margin: 8px auto;
+    }
+}
+
+/* Remove conflicting rules */
+/* Delete or comment out these rules as they're causing conflicts */
+header .mobile-menu-active .button {
+    display: none;  /* Remove this rule */
+}
+
+header .button {
+    display: none;  /* Remove this rule */
 }

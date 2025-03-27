@@ -60,12 +60,12 @@ function FaqsPage() {
 
       <h3 className={styles["faqs-subtitle"]}>8. Can I volunteer with FLASH?</h3>
       <p className={styles["faqs-paragraph"]}>
-        Yes, we welcome volunteers from all walks of life. Whether you’re a lawyer, an advocate for justice, or someone with unique skills, your contribution can help us achieve our mission. Visit our <a href="/get-involved" className={styles["underline-link"]}>Get Involved</a> page for more details.
+        Yes, we welcome volunteers from all walks of life. Whether you’re a lawyer, an advocate for justice, or someone with unique skills, your contribution can help us achieve our mission. Visit our <a href="/get-involved" className={styles["link-underlined"]}>Get Involved</a> page for more details.
       </p>
 
       <h3 className={styles["faqs-subtitle"]}>9. Can I donate to FLASH, and how?</h3>
       <p className={styles["faqs-paragraph"]}>
-        Absolutely. Donations are crucial to sustaining our work. You can donate via bank transfer or have our representatives collect cash or cheques. Visit our <a href="/donate" className={styles["underline-link"]}>Donate</a> page for more information.
+        Absolutely. Donations are crucial to sustaining our work. You can donate via bank transfer or have our representatives collect cash or cheques. Visit our <a href="/donate" className={styles["link-underlined"]}>Donate</a> page for more information.
       </p>
     </div>
   );

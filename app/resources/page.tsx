@@ -12,10 +12,28 @@ interface Resource {
   name: string;
   pdf_url: string;
   description?: string;
+  created_at: string;  // Add this field
 }
+
+const displayOrder = [
+  "FLASH's Latest Annual Report & Audit Report",
+  "FLASH's Latest Renewal of Registration",
+  "Application Forms for Criminal Cases",
+  "Application Forms for Civil Cases",
+  "Membership Form for New Members",
+  "Friends of FLASH Form for New Friends"
+];
 
 const ResourcesPage = () => {
   const { data: resources, loading, error } = useSupabase<Resource>(TABLES.RESOURCES);
+
+  const sortedResources = React.useMemo(() => {
+    if (!resources) return [];
+    
+    return [...resources].sort((a, b) => {
+      return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+    });
+  }, [resources]);
 
   const resourceList = (
     <div className={styles.resourceList}>
@@ -24,7 +42,7 @@ const ResourcesPage = () => {
       ) : error ? (
         <p className={styles.error}>Error loading resources. Please try again later.</p>
       ) : (
-        resources.map((resource) => (
+        sortedResources.map((resource) => (
           <div key={resource.id} className={styles.resourceItem}>
             <Image
               src="/images/pdf.png"

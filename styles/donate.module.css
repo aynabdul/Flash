@@ -27,25 +27,7 @@
     z-index: 1;
 }
 
-@media (max-width: 768px) {
-    .content {
-        top: -80px; 
-    }
-    .hero-image {
-        margin: 0 auto;
-        top: -40px;
-    }
-}
 
-@media (max-width: 480px) {
-    .content {
-        top: -50px; 
-    }
-    .hero-image {
-        margin: 0 auto; 
-        top: -20px; 
-    }
-}
 
 .donate-content {
     padding: 30px 60px; /* Consistent padding */
@@ -84,4 +66,28 @@
     color: var(--navy); /* Use navy color */
     font-family: 'Trebuchet MS', sans-serif; /* Set font */
 }
+@media (max-width: 768px) {
+    .content {
+        top: -80px; 
+    }
+    .hero-image {
+        margin: 0 auto;
+        top: -40px;
+    }
+    .donate-content {
+        padding: 20px 40px; 
+    }
+}
 
+@media (max-width: 480px) {
+    .content {
+        top: -50px; 
+    }
+    .hero-image {
+        margin: 0 auto; 
+        top: -20px; 
+    }
+    .donate-content{
+        padding: 10px 20px;
+    }
+}

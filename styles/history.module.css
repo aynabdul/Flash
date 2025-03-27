@@ -129,9 +129,18 @@
       top: -50px;
       padding: 20px;
     }
+    .history-content {
+      padding: 20px 40px;
+    }
   
     .certificates-section {
       flex-direction: column;
       align-items: center;
     }
   }
+
+  @media (max-width: 480px) {
+    .mission-content{
+        padding: 10px 20px;
+    }
+}
