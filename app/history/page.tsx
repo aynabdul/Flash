@@ -17,7 +17,7 @@ function HistoryPage() {
         </div>
         <div className={styles["history-image"]}>
           <Image
-            src="/images/Justice Mazoor Ahmad Malik.jpg" // Replace with the actual image path
+            src="/images/Justice Mazoor Ahmad Malik.jpg" 
             alt="Justice Manzoor Ahmad Malik"
             width={200}
             height={250}

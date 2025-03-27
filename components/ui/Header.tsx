@@ -76,8 +76,10 @@ const Header = () => {
 
         {/* Buttons */}
         <div className="navbar-button">
-          <Link className="button" href="/donate">
-            <DonateButton/>
+          <Link href="/donate">
+            <div className="button">
+              <DonateButton />
+            </div>
           </Link>
         </div>
 
@@ -110,7 +112,9 @@ const Header = () => {
           <Link href="/get-involved" onClick={() => setMenuOpen(false)}>GET INVOLVED</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>CONTACT US</Link>
           <Link href="/donate" onClick={() => setMenuOpen(false)}>
-            <DonateButton /> {/* Use the reusable DonateButton component */}
+            <div className="button">
+              <DonateButton />
+            </div>
           </Link>
         </nav>
       )}

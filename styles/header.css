@@ -173,17 +173,10 @@ header .dropdown-menu a:hover {
 }
 
 header .button {
-    background-color: #FFD700;
-    color: white;
     padding: 8px 16px;
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
 }
 
-header .button:hover {
-    background-color: #FFC107;
-}
 
 /* Mobile menu button */
 header .mobile-menu-button {
@@ -281,12 +274,8 @@ header .navbar-button {
         display: flex; /* Show mobile menu */
     }
 
-    header .button {
-        display: none; /* Hide Donate button in navbar */
-    }
-
     header .navbar-button {
-        display: none; /* Hide navbar donate button */
+        display: none; /* Only hide on mobile */
     }
 }
 
@@ -323,10 +312,10 @@ header .navbar-button {
 
 /* Remove conflicting rules */
 /* Delete or comment out these rules as they're causing conflicts */
-header .mobile-menu-active .button {
-    display: none;  /* Remove this rule */
+/* header .mobile-menu-active .button {
+    display: none;
 }
 
 header .button {
-    display: none;  /* Remove this rule */
-}
+    display: none;
+} */
